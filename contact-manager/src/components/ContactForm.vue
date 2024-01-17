@@ -27,7 +27,7 @@
     }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
     h2 {
         color: red;
     }
