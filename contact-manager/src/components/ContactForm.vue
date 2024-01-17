@@ -1,7 +1,7 @@
 <template>
     <div>
         <h2>Créer un contact</h2>
-        <form>
+        <form @submit.prevent='createContact'>
             <input type="text" placeholder="prénom" v-model="contact.firstName"><br>
             <input type="text" placeholder="nom" v-model="contact.lastName"><br>
             <input type="text" placeholder="email" v-model="contact.email"><br>
@@ -23,8 +23,14 @@
                     phone: ""
                 }
             };
+        },
+        methods: {
+        createContact() {
+            console.log(this.contact);
         }
     }
+};
+    
 </script>
 
 <style scoped>
