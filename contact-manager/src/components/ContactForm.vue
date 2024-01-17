@@ -1,5 +1,6 @@
 <template>
     <div>
+        <h2>Créer un contact</h2>
         <form>
             <input type="text" placeholder="prénom" v-model="contact.firstName"><br>
             <input type="text" placeholder="nom" v-model="contact.lastName"><br>
@@ -27,5 +28,7 @@
 </script>
 
 <style lang="scss" scoped>
-
+    h2 {
+        color: red;
+    }
 </style>
