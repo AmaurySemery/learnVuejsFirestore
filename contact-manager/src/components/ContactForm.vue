@@ -12,6 +12,8 @@
 </template>
 
 <script>
+import db from '../shared/db';
+
 // snippet "vdata"
     export default {
         data() {
@@ -26,9 +28,15 @@
         },
         methods: {
         createContact() {
-            console.log(this.contact);
+            db.create(this.contact)
+            .then((data) => {
+                console.log(data);
+            })
+            .catch(error => {
+                console.error(error);
+            });
         }
-    }
+    },
 };
     
 </script>

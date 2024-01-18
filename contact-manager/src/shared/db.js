@@ -1,23 +1,26 @@
-import Firebase from 'firebase/app';
-import 'firebase/firestore';
+import { initializeApp } from "firebase/app";
+import { getFirestore, collection } from 'firebase/firestore/lite';
 import fsConfig from './config';
 
 const config = fsConfig;
 
-const App = Firebase.initializeApp(config);
-const Firestore = App.firestore();
-Firestore.settings({ timestampsInSnapshots: true });
+const App = initializeApp(config);
+const db = getFirestore(App);
+
+export const contacts = collection(db, 'contacts')
+
+  /*
 
 export default {
     create(contact) {
-        return Firestore.collection('contacts').add(contact);
-    },
+        return App.collection('contacts').add(contact);
+      },
     read() {
         // cf collection DB firebase
-        return Firestore.collection('contacts').get();
+        return App.collection('contacts').get();
     },
 }
-
+*/
 /*
 {
     create: function() {},
